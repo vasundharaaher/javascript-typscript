@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery image slider project</title>
+       <!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<!-- jQuery UI CSS -->
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+<!-- jQuery UI JS -->
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+<!-- Slick Carousel CSS -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+<!-- Slick Carousel JS -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.slider').slick();
+    })
+</script>
+
+<style>
+    .slider{
+        width: 80%;
+        margin: 0 auto;
+    }
+    .slider img{
+        width: 100%;
+        height: auto;
+    }
+</style>
+</head>
+<body>
+    
+    <h1>Image Slider</h1>
+    <div class="slider">
+        <div><img src="table1.jpg" alt="img1"></div>
+        <div><img src="table2.jpg" alt="img2"></div>
+        <div><img src="sofa.jpg" alt="img3"></div>
+        <div><img src="dining.jpg" alt="img4"></div>
+    </div>
+
+</body>
+</html>

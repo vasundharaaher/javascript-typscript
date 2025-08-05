@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling With jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $("#clickButton").click(function(){
+                $("#message").text("Button Clicked!");
+            });
+
+            $("#hoverDiv").hover(
+                function(){
+                $(this).css("background-color","lightblue");
+            },
+            function(){
+                $(this).css("background-color","lightgray");
+            });
+
+            $("#fadeout").click(function(){
+                $("#text").fadeOut();
+            });
+            $("#fadein").click(function(){
+                $("#text").fadeIn();
+            });
+
+            $("#toggleButton").click(function(){
+                $("#box").slideToggle();
+            });
+        });
+    </script>
+</head>
+<body>
+    
+    <h1>Click Event Handling</h1>
+    <button id="clickButton">Click Me</button>
+
+    <p id="message">Waiting for a click....</p>
+
+    <h1>Hover Event Handling</h1>
+    <div id="hoverDiv" style="width: 200px; height: 200px; background-color: lightgrey;">Hover over block </div>
+
+    <h1>Fade In/Out Effect</h1>
+    <button id="fadeout">Fade out</button>
+    <button id="fadein">Fade in</button>
+    <p id="text">This is a paragraph that will fade in and in and out. </p>
+
+    <h1>Slide Toggle Effect</h1>
+    <button id="toggleButton">Toggle Box</button>
+    <div id="box" style="width: 200px; height: 200px; background-color: aquamarine; display:flex;"></div>
+</body>
+</html>

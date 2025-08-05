@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Hadling and User Interactive</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    
+    <a id="myLink" href="https://www.google.com"> Visit Siten </a>
+    <button id="changeLink"> Change Link </button>
+
+    <img id="myimg" src="table1.jpg" alt="Image">
+    <button id="changeImg"> Change Image </button>
+
+    <script>
+        $(document).ready(function(){
+            $("#changeLink").click(function(){
+                let currentHref = $("#myLink").attr("href");
+                alert("Current Href : " + currentHref);
+
+                $("#myLink").attr("href", "https://www.newsite.com");
+                $("#myLink").text("Visited Site");
+            });
+
+            $("#changeImg").click(function(){
+                let currentSrc = $("#myimg").attr("src");
+                alert("Current src : " + currentSrc);
+
+                $("#myimg").attr("src", "https://www.google.com/search?sca_esv=8552da81257ee862&q=img&udm=2&fbs=ABzOT_CWdhQLP1FcmU5B0fn3xuWpA-dk4wpBWOGsoR7DG5zJBsxayPSIAqObp_AgjkUGqekYoUzDaOcDDjQfK4KpR2OIJg0p8GjEafhVsU6UZNT2tW0loW38GcShQ2q6v0T366BsZvzDIVZZhuNGkwpxA4Lf8CpfhMUKcYhV5oV-6wcEeqCWGPZj4Fq4MMYUk8QAQ7f5-zURMg2Qz6nTowTEdDejjxQ8Rg&sa=X&ved=2ahUKEwiH5LuO2f-MAxWlwjgGHVkfADsQtKgLegQIExAB&biw=1536&bih=730&dpr=1.25#vhid=ONOuL3Ts_VAeQM&vssid=mosaic");
+              
+            });
+        });
+    </script>
+
+</body>
+</html>

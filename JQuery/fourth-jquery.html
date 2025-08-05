@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>get and set css classes</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        .active{
+            background-color: yellowgreen;
+            font-size: 20px;
+        }
+        .inactive{
+            background-color: rgb(251, 6, 6);
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <p id="status" class="inactive">Status: Inactive</p>
+    <button id="activate">Activate</button>
+
+    <button id="activate">Activate</button>
+    <script>
+        $(document).ready(function(){
+            $("#activate").click(function(){
+                if($("#status").hasClass("inactive")){
+                    $("#status").removeClass("inactive").addClass("active").text("Status: Active");
+                }
+            })
+        })
+    </script>
+</body>
+</html>

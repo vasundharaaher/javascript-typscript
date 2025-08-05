@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery AJAX Unload</title>
+   <!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<!-- jQuery UI CSS -->
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+<!-- jQuery UI JS -->
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+<!-- Slick Carousel CSS -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+<!-- Slick Carousel JS -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
+<script>
+    $(document).ready(function(){
+        $("#loadButton").click(function(){
+            $.ajax({
+                url: "server-endpoint.php",
+                method: "GET",
+                success: function(data){
+                    $('#content').html(data);
+                }
+            })
+        });
+
+        $("#submitButton").click(function(){
+            $.ajax({
+                url: "submit.php",
+                method: "POST",
+                data:{ name: $("#nameInput").val()},
+                success: function(data){
+                    $('#response').html(data);
+                },
+                error: function(xhr,status,error){
+                    $("#response").html("Error: "+error);
+                }
+            });
+        });
+
+        $('.slick').slick({
+            autoplay: true,
+            autoplaySpeed:2000,
+            dots:true
+        });
+
+        $("#datepicker").datepicker(); // Fixed typo here
+    });
+
+    
+ 
+
+
+</script>
+</head>
+<body>
+    
+    <h1>Ajax get request</h1>
+    <button id="loadButton">Load data</button>
+    <div id="content">Content will be loaded here.</div>
+
+     
+    <h1>Ajax POST request</h1>
+    <input type="text" id="nameInput" placeholder="Enter your name: ">
+    <button type="submit" id="submitButton">Submit</button>
+
+    <div id="response">Response will be loaded here.</div>
+
+    <h1>jQuery UI Datepicker</h1>
+    <input type="text" id="datepicker" placeholder="Select a date">
+
+    <h1>Slick Carousel</h1>
+    <div class="slick">
+        <div><img src="table2.jpg" alt="slide 1"></div>
+        <div><img src="table1.jpg" alt="slide 2"></div>
+    </div>
+</body>
+</html>
