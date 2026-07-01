@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery AJAX load</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#load-content').click(function(){
+                $('#content').load('content.html');
+            });
+            $('#load-data').click(function(){
+                $('#data').load('data.php' , {id:1,type:'example'});
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <h1>AJAX load() Method</h1>
+    <button id="load-content">Load content</button>
+    <div id="content"></div> <!-- Changed from button to div -->
+
+    <h1>AJAX load() Method with Parameters.</h1>
+    <button id="load-data">Load data</button>
+    <div id="data"></div> 
+</body>
+</html>

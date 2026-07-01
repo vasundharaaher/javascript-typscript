@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#changeText").click(function(){
+                $("#text").text("The text has been changed!");
+            });
+
+            $("#addElement").click(function(){
+                $("#container").append("<p>New Paragraph added </p>");
+            });
+            
+            $("#removeElement").click(function(){
+                $("#text").remove();
+            });
+        })
+    </script>
+</head>
+<body>
+    
+    <h1>Basic DOM Manipulation</h1>
+    <button id="changeText">Change text</button>
+    <button id="removeElement">Remove Element</button>
+    <button id="addElement">Add Element</button>
+
+    <div id="container">
+        <p id="text">This is a sample test.</p>
+    </div>
+
+</body>
+</html>

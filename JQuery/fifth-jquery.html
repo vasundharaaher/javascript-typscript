@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add and remove element</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        .highlight{
+            background-color: yellowgreen;
+        }
+        .active{
+            color: blue;
+        }
+        .inactive{
+            color: aqua;
+        }
+    </style>
+</head>
+<body>
+    
+    <ul id="mylist">
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+    <button id="additem">Add item</button>
+
+
+    <div id="container">
+        <li class="item">Item 1</li>
+        <li class="item">Item 2</li>
+        <li class="item">Item 3</li>
+        <li class="item">Item 4</li>
+    </div>
+    
+    <button id="removeitem">Remove item</button>
+
+    <div>
+        <p class="info">First Item</p>
+        <p class="info">Second Item</p>
+        <p class="info">Third Item</p>
+    </div>
+
+    <button id="highlight">highlight next sibling</button>
+
+
+    <ul id="statusList">
+        <li class="active" >Active Item 1</li>
+        <li class="inactive" >Inactive Item 1</li>
+        <li class="active" >Active Item 1</li>
+        <li class="inactive" >Inactive Item 1</li>
+        <li class="active" >Active Item 1</li>
+        <li class="inactive" >Inactive Item 1</li>
+        
+    </ul>
+    <button id="showActive">highlight next sibling</button>
+
+    <script>
+
+        $(document).ready(function(){
+            $("#additem").click(function(){
+                $("#mylist").append("<li> new item </li>");
+            });
+        });
+
+        $(document).ready(function(){
+            $("#removeitem").click(function(){
+                $("#container .item").last().remove();
+            });
+
+            $("#highlight").click(function(){
+                $(".info").eq(0).next().addClass("highlight");
+            });
+
+            $("#showActive").click(function(){
+                $("statusList li").hide();
+                $("statusList li.active").show();
+            });
+        });
+    </script>
+</body>
+</html>
